@@ -1,0 +1,41 @@
+/* Paleta de cores definida em variáveis CSS */
+:root {
+    --bg-page: #f4f6f9;         /* Cinza claro para o fundo */
+    --bg-card: #ffffff;         /* Branco para o card */
+    --primary: #2b2d42;         /* Azul escuro (Títulos principais) */
+    --secondary: #3f37c9;       /* Azul médio (Subtítulos e Badges) */
+    --text-muted: #6c757d;      /* Cinza para textos secundários */
+}
+
+/* Aplicando as cores no HTML */
+body {
+    background-color: var(--bg-page);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.custom-card {
+    background-color: var(--bg-card);
+    max-width: 800px;
+}
+
+.custom-title {
+    color: var(--primary);
+}
+
+.custom-subtitle {
+    color: var(--secondary);
+    border-left: 4px solid var(--secondary);
+    padding-left: 10px;
+}
+
+.custom-hr {
+    border-color: var(--secondary);
+    opacity: 0.2;
+}
+
+.custom-badge {
+    background-color: var(--secondary) !important;
+    color: #fff;
+    font-size: 0.9rem;
+    padding: 8px 12px;
+}
