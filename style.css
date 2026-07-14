@@ -1,41 +1,131 @@
-/* Paleta de cores definida em variáveis CSS */
+
+
+/* PALETA DE CORES PERSONALIZADA: "CYBER SLATE" */
 :root {
-    --bg-page: #f4f6f9;         /* Cinza claro para o fundo */
-    --bg-card: #ffffff;         /* Branco para o card */
-    --primary: #2b2d42;         /* Azul escuro (Títulos principais) */
-    --secondary: #3f37c9;       /* Azul médio (Subtítulos e Badges) */
-    --text-muted: #6c757d;      /* Cinza para textos secundários */
+    --bg-main: #edf2f4;           /* Fundo geral da página */
+    --sidebar-bg: #1e2229;        /* Fundo do painel esquerdo (Cinza Escuro/Grafite) */
+    --content-bg: #ffffff;        /* Fundo da parte de conteúdo (Branco Puro) */
+    --emerald: #2ec4b6;           /* Cor de Destaque / Verde Menta */
+    --emerald-light: #e6f9f7;     /* Fundo suave para detalhes destacados */
+    --dark-custom: #2b2d42;       /* Texto principal */
+    --text-secondary: #5c677d;   /* Texto secundário */
 }
 
-/* Aplicando as cores no HTML */
 body {
-    background-color: var(--bg-page);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-main);
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    color: var(--dark-custom);
 }
 
-.custom-card {
-    background-color: var(--bg-card);
-    max-width: 800px;
+/* Card Principal (Estilo Dashboard) */
+.main-card {
+    background-color: var(--content-bg);
+    border: none;
+    min-height: 550px;
 }
 
-.custom-title {
-    color: var(--primary);
+/* Sidebar Esquerda (Grafite) */
+.sidebar-profile {
+    background-color: var(--sidebar-bg);
+    color: #ffffff;
 }
 
-.custom-subtitle {
-    color: var(--secondary);
-    border-left: 4px solid var(--secondary);
-    padding-left: 10px;
-}
-
-.custom-hr {
-    border-color: var(--secondary);
-    opacity: 0.2;
-}
-
-.custom-badge {
-    background-color: var(--secondary) !important;
-    color: #fff;
+.tech-tag {
+    color: var(--emerald);
     font-size: 0.9rem;
-    padding: 8px 12px;
+    font-weight: 500;
 }
+
+/* Moldura e Efeito da Foto de Perfil */
+.profile-avatar-container {
+    position: relative;
+    width: 110px;
+    height: 110px;
+}
+
+.profile-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    position: relative;
+    z-index: 2;
+    border: 3px solid var(--sidebar-bg);
+}
+
+.profile-avatar-glow {
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    width: 106px;
+    height: 106px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--emerald), #011627);
+    z-index: 1;
+}
+
+/* Caixas de ícones de contato */
+.icon-box {
+    width: 36px;
+    height: 36px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--emerald);
+}
+
+/* Coluna de Conteúdo */
+.content-area {
+    background-color: var(--content-bg);
+}
+
+.text-dark-custom {
+    color: var(--dark-custom);
+}
+
+.text-secondary-custom {
+    color: var(--text-secondary);
+}
+
+.section-icon-box {
+    color: var(--emerald);
+    font-size: 1.3rem;
+}
+
+/* Timeline e Blocos */
+.bg-light-custom {
+    background-color: var(--bg-main);
+}
+
+.border-emerald {
+    border-color: var(--emerald) !important;
+}
+
+.badge-date {
+    background-color: var(--emerald-light);
+    color: #0f9f90;
+    font-weight: 600;
+}
+
+/* Badges de Habilidades Customizadas */
+.skill-badge {
+    background-color: var(--bg-main);
+    color: var(--dark-custom);
+    padding: 8px 16px;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: all 0.2s ease;
+}
+
+.skill-badge:hover {
+    background-color: var(--emerald-light);
+    color: #0f9f90;
+    border-color: var(--emerald);
+    transform: translateY(-2px);
+}
+
+
