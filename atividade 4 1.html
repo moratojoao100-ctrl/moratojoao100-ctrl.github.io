@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unidades de Medida CSS</title>
+  <style>
+    body {
+      margin: 20px;
+      font-family: Arial, sans-serif;
+      background: #f5f7fb;
+      color: #1f2937;
+      line-height: 1.7;
+    }
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      background: #ffffff;
+      border-radius: 14px;
+      padding: 24px;
+      box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
+    }
+    h1 {
+      margin-bottom: 1rem;
+      color: #0f172a;
+    }
+    h2 {
+      margin-top: 2rem;
+      color: #0f172a;
+    }
+    h3 {
+      margin-top: 1rem;
+      color: #1d4ed8;
+    }
+    p {
+      margin-top: 0.75rem;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.25rem;
+      margin-top: 1rem;
+    }
+    .grid-item {
+      background: #f8fafc;
+      border: 1px solid #d1d5db;
+      border-radius: 12px;
+      padding: 1rem;
+    }
+    .grid-item h3 {
+      margin-top: 0;
+    }
+    .note {
+      margin-top: 2rem;
+      padding: 1rem 1.15rem;
+      border-left: 4px solid #0d6efd;
+      background: #eef4ff;
+      border-radius: 10px;
+    }
+    @media (max-width: 720px) {
+      body {
+        margin: 14px;
+      }
+      .container {
+        padding: 18px;
+      }
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Unidades de Medida CSS</h1>
+    <p>Entenda a diferença entre unidades absolutas e relativas em CSS e saiba quando usar cada tipo.</p>
+
+    <h2>Unidades Absolutas</h2>
+
+    <h3>📏 Pixel (px)</h3>
+    <p><strong>Exemplo:</strong> Imagine um botão que precisa ter exatamente o mesmo tamanho em toda a página.
+       Definir a largura dele em pixels faz com que ele tenha sempre o mesmo tamanho,
+       não importando o tamanho da tela.</p>
+    <p><strong>Uso comum:</strong> Botões pequenos, bordas, ícones.</p>
+    <p><strong>Situação prática:</strong> Um ícone de menu com tamanho fixo.</p>
+
+    <h3>🖨️ Ponto (pt)</h3>
+    <p><strong>Exemplo:</strong> Um site que gera um currículo para impressão pode usar pontos
+       para garantir que o texto saia no tamanho correto no papel.</p>
+    <p><strong>Uso comum:</strong> Documentos impressos.</p>
+    <p><strong>Situação prática:</strong> Texto de um currículo em PDF.</p>
+
+    <h3>📐 Polegada (in)</h3>
+    <p><strong>Exemplo:</strong> Uma página feita para impressão de panfletos pode definir margens
+       em polegadas para bater com o tamanho real do papel.</p>
+    <p><strong>Uso comum:</strong> Impressão.</p>
+    <p><strong>Situação prática:</strong> Layout de cartaz ou revista.</p>
+
+    <h2>Unidades Relativas</h2>
+
+    <h3>🔤 EM</h3>
+    <p><strong>Exemplo:</strong> Se o texto principal ficar maior, todos os subtítulos aumentam
+       automaticamente porque usam <em>em</em> como medida.</p>
+    <p><strong>Uso comum:</strong> Tamanhos de fonte e espaçamentos.</p>
+    <p><strong>Situação prática:</strong> Textos dentro de caixas ou cards.</p>
+
+    <h3>🔠 REM</h3>
+    <p><strong>Exemplo:</strong> Um site ajusta todo o texto quando o usuário muda o tamanho da fonte
+       nas configurações do navegador, pois tudo é baseado no tamanho da fonte principal da página.</p>
+    <p><strong>Uso comum:</strong> Fontes e layout geral.</p>
+    <p><strong>Situação prática:</strong> Sites acessíveis para pessoas com dificuldade visual.</p>
+
+    <h3>📊 Percentual (%)</h3>
+    <p><strong>Exemplo:</strong> Uma imagem ocupa metade da largura da tela,
+       independentemente se o usuário está no celular ou no computador.</p>
+    <p><strong>Uso comum:</strong> Layouts flexíveis.</p>
+    <p><strong>Situação prática:</strong> Colunas de um site.</p>
+
+    <h3>📱 VW (largura da tela)</h3>
+    <p><strong>Exemplo:</strong> Um banner inicial ocupa metade da largura da tela do usuário,
+       ajustando-se automaticamente em qualquer dispositivo.</p>
+    <p><strong>Uso comum:</strong> Banners e seções grandes.</p>
+    <p><strong>Situação prática:</strong> Capa de um site.</p>
+
+    <h3>📲 VH (altura da tela)</h3>
+    <p><strong>Exemplo:</strong> A primeira seção de um site ocupa toda a altura da tela
+       quando a página é aberta.</p>
+    <p><strong>Uso comum:</strong> Telas iniciais (hero sections).</p>
+    <p><strong>Situação prática:</strong> Páginas modernas de apresentação.</p>
+
+</body>
+</html>
