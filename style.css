@@ -1,28 +1,32 @@
-
-
-/* PALETA DE CORES PERSONALIZADA: "CYBER SLATE" */
+/* ==========================================
+   PALETA DE CORES PERSONALIZADA: "CYBER SLATE"
+   ========================================== */
 :root {
-    --bg-main: #edf2f4;           /* Fundo geral da página */
-    --sidebar-bg: #1e2229;        /* Fundo do painel esquerdo (Cinza Escuro/Grafite) */
-    --content-bg: #ffffff;        /* Fundo da parte de conteúdo (Branco Puro) */
-    --emerald: #2ec4b6;           /* Cor de Destaque / Verde Menta */
-    --emerald-light: #e6f9f7;     /* Fundo suave para detalhes destacados */
-    --text-secondary: #5c677d;   /* Texto secundário */
-    --dark-custom: #2b2d42;       /* Texto principal */
-    --text-secondary: #5c677d;   /* Texto secundário */
+    --bg-main: #edf2f4;            /* Fundo geral da página */
+    --sidebar-bg: #1e2229;         /* Fundo do painel esquerdo (Cinza Escuro/Grafite) */
+    --content-bg: #ffffff;         /* Fundo da parte de conteúdo (Branco Puro) */
+    --emerald: #2ec4b6;            /* Cor de Destaque / Verde Menta */
+    --emerald-light: #e6f9f7;      /* Fundo suave para detalhes destacados */
+    --dark-custom: #2b2d42;        /* Texto principal */
+    --text-secondary: #5c677d;     /* Texto secundário (Duplicata removida) */
 }
 
+/* 8. Otimização do Layout com Responsividade e Carregamento (Melhoria 8) */
 body {
     background-color: var(--bg-main);
     font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
     color: var(--dark-custom);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
 }
 
-/* Card Principal (Estilo Dashboard) */
+/* 6. Efeito Visual de Glassmorphism e Sombra no Card (Melhoria 6) */
 .main-card {
-    background-color: var(--content-bg);
-    border: none;
+    background-color: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
     min-height: 550px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
 /* Sidebar Esquerda (Grafite) */
@@ -36,13 +40,27 @@ body {
     color: #ffffff !important;
 }
 
+/* Sublinhado branco nos links de contato ao passar o mouse (Hover) */
+.contact-info-list a {
+    text-decoration: none !important;
+    transition: all 0.2s ease;
+}
+
+.contact-info-list a:hover,
+.contact-info-list a:focus-visible {
+    text-decoration: underline !important;
+    text-decoration-color: #ffffff !important;
+    text-decoration-thickness: 1.5px !important;
+    text-underline-offset: 3px !important;
+}
+
 .tech-tag {
     color: var(--emerald);
     font-size: 0.9rem;
     font-weight: 500;
 }
 
-/* Moldura e Efeito da Foto de Perfil */
+/* Moldura e Efeito da Foto de Perfil com Animação Glow */
 .profile-avatar-container {
     position: relative;
     width: 110px;
@@ -59,15 +77,22 @@ body {
     border: 3px solid var(--sidebar-bg);
 }
 
+@keyframes pulse-glow {
+    0% { transform: scale(1); opacity: 0.8; }
+    50% { transform: scale(1.04); opacity: 1; filter: brightness(1.2); }
+    100% { transform: scale(1); opacity: 0.8; }
+}
+
 .profile-avatar-glow {
     position: absolute;
-    top: -3px;
-    left: -3px;
-    width: 106px;
-    height: 106px;
+    top: -4px;
+    left: -4px;
+    width: 108px;
+    height: 108px;
     border-radius: 50%;
     background: linear-gradient(135deg, var(--emerald), #011627);
     z-index: 1;
+    animation: pulse-glow 3s infinite ease-in-out;
 }
 
 /* Caixas de ícones de contato */
@@ -80,11 +105,53 @@ body {
     align-items: center;
     justify-content: center;
     color: var(--emerald);
+    transition: background-color 0.2s ease;
 }
 
-/* Coluna de Conteúdo */
+.icon-box:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Coluna de Conteúdo e Hierarquia Visual de Títulos */
 .content-area {
     background-color: var(--content-bg);
+}
+
+/* 4. Correção da Hierarquia Lógica dos Títulos (Melhoria 4) */
+.content-area h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--dark-custom);
+    margin-bottom: 1rem;
+}
+
+.content-area h2 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--dark-custom);
+    border-left: 4px solid var(--emerald);
+    padding-left: 10px;
+    margin-top: 1.5rem;
+    margin-bottom: 0.8rem;
+}
+
+.content-area h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    position: relative;
+    padding-bottom: 8px;
+}
+
+.content-area h3::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 40px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--emerald), transparent);
+    border-radius: 2px;
 }
 
 .text-dark-custom {
@@ -98,6 +165,42 @@ body {
 .section-icon-box {
     color: var(--emerald);
     font-size: 1.3rem;
+}
+
+/* 7. Criação de Links Internos e HTML Semântico (Melhoria 7) */
+header {
+    width: 100%;
+    background-color: var(--sidebar-bg);
+}
+
+main {
+    display: block;
+    width: 100%;
+}
+
+section {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background-color: var(--content-bg);
+    border-radius: 12px;
+}
+
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    color: var(--text-secondary);
+}
+
+.content-area a:not(.print-btn):not(.social-link) {
+    color: var(--emerald);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.content-area a:not(.print-btn):not(.social-link):hover {
+    color: #209b8f;
 }
 
 /* Timeline e Blocos */
@@ -130,7 +233,7 @@ body {
     margin-bottom: 0;
 }
 
-/* Badges de Habilidades Customizadas */
+/* Badges de Habilidades Customizadas (Visual Moderno Elevado) */
 .skill-badge {
     background-color: var(--bg-main);
     color: var(--dark-custom);
@@ -138,19 +241,84 @@ body {
     border-radius: 30px;
     font-size: 0.85rem;
     font-weight: 500;
-    border: 1px solid rgba(0, 0, 0, 0.05);
-    transition: all 0.2s ease;
+    border: 1px solid rgba(46, 196, 182, 0.2);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .skill-badge:hover {
-    background-color: var(--emerald-light);
-    color: #0f9f90;
+    background-color: var(--emerald);
+    color: #ffffff;
     border-color: var(--emerald);
-    transform: translateY(-2px);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(46, 196, 182, 0.3);
 }
 
+.social-link {
+    display: inline-block;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    padding-bottom: 4px;
+    transition: border-color 0.2s ease, color 0.2s ease;
+}
 
-/* Carrossel customizado */
+.social-link:hover,
+.social-link:focus-visible {
+    border-bottom-color: #ffffff;
+    color: #ffffff;
+    outline: none;
+    text-decoration: underline !important;
+    text-decoration-color: #ffffff !important;
+    text-decoration-thickness: 2px !important;
+    text-underline-offset: 3px !important;
+}
+
+/* Botão de impressão com Gradiente Neon */
+.print-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: none;
+    border-radius: 999px;
+    padding: 0.75rem 1.4rem;
+    background: linear-gradient(135deg, var(--emerald), #209b8f);
+    color: #ffffff;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    box-shadow: 0 4px 15px rgba(46, 196, 182, 0.4);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.print-btn:hover {
+    background: linear-gradient(135deg, #25a899, var(--emerald));
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(46, 196, 182, 0.6);
+}
+
+.project-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: none;
+    border-radius: 999px;
+    padding: 0.75rem 1.4rem;
+    background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+    color: #ffffff;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+    transition: all 0.3s ease;
+}
+
+.project-btn:hover {
+    background: linear-gradient(135deg, #2563eb, #1e40af);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
+    color: #ffffff;
+}
+
+/* Carrossel customizado com Glassmorphism */
 .carousel-item {
     display: none;
 }
@@ -165,12 +333,15 @@ body {
 }
 
 .carousel-caption {
-    background: rgba(17, 24, 39, 0.7);
+    background: rgba(17, 24, 39, 0.75);
+    backdrop-filter: blur(4px);
     color: #fff;
     left: 1rem;
     right: auto;
     bottom: 1rem;
     max-width: 80%;
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
 }
 
 .carousel-control-prev,
@@ -179,10 +350,16 @@ body {
     height: 3rem;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.25);
+    background: rgba(0, 0, 0, 0.3);
     border: 0;
     border-radius: 50%;
     opacity: 0.9;
+    transition: background-color 0.2s ease;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    background: rgba(0, 0, 0, 0.5);
 }
 
 .carousel-control-prev {
@@ -206,12 +383,79 @@ body {
     border: 0;
     background-color: rgba(255, 255, 255, 0.7);
     margin: 0 0.3rem;
+    cursor: pointer;
 }
 
 .carousel-indicators [data-slide-indicator].active {
     background-color: var(--emerald);
 }
 
-/* Reset basico de CSS */
-/* Paleta de cores Cyber Slate */
+/* 5. Estilização para Atributos ALT e Nomes Descritivos de Imagens (Melhoria 5) */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    background-color: var(--bg-main);
+    padding: 4px;
+    border-radius: 6px;
+}
 
+/* Destaque para palavras-chave SEO */
+.keyword-highlight {
+    background-color: var(--emerald-light);
+    color: #0f9f90;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+@media print {
+    body {
+        background: #ffffff;
+    }
+
+    .container {
+        max-width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    .main-card {
+        box-shadow: none !important;
+        border: none !important;
+        background: #ffffff !important;
+    }
+
+    .print-btn,
+    .carousel-control-prev,
+    .carousel-control-next,
+    .carousel-indicators {
+        display: none !important;
+    }
+
+    .sidebar-profile {
+        background: #ffffff !important;
+        color: #000000 !important;
+        border-right: 1px solid #ccc;
+    }
+
+    .contact-info-list small,
+    .contact-info-list span,
+    .social-link {
+        color: #000000 !important;
+    }
+}
+
+/* 8. Responsividade de Tela (Melhoria 8) */
+@media (max-width: 768px) {
+    .main-card {
+        min-height: auto;
+    }
+    
+    .sidebar-profile {
+        width: 100%;
+    }
+}
