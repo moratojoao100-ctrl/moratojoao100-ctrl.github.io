@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Display CSS - Ajuste de Margem</title>
+  <style>
+    /* Reset total */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: sans-serif;
+    }
+
+    html,
+    body {
+      min-height: 100%;
+      background-color: #f0f0f0;
+    }
+
+    .wrapper {
+      min-height: 100%;
+      display: flex;
+      flex-direction: column;
+      padding-bottom: 50px;
+    }
+
+    .header {
+      background-color: #4a4a4a;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .menu {
+      background-color: #666;
+      text-align: center;
+      padding: 10px;
+    }
+
+    .menu a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-size: 14px;
+    }
+
+    .main-container {
+      width: 94%;
+      margin: 15px auto 0 auto;
+      background-color: transparent;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .coluna-esquerda,
+    .coluna-direita {
+      padding: 20px;
+      font-size: 16px;
+      min-height: calc(100vh - 185px);
+      border-radius: 15px 0 0 0;
+    }
+
+    .coluna-esquerda {
+      flex: 1 1 280px;
+      max-width: 280px;
+      background-color: #d1d9c8;
+    }
+
+    .coluna-direita {
+      flex: 2 1 600px;
+      background-color: #e8f0e1;
+      border-radius: 0 15px 0 0;
+    }
+
+    .footer {
+      background-color: #4a4a4a;
+      color: white;
+      text-align: center;
+      height: 50px;
+      line-height: 50px;
+      width: 100%;
+      position: relative;
+      margin-top: auto;
+    }
+
+    @media (max-width: 768px) {
+      .main-container {
+        flex-direction: column;
+      }
+
+      .coluna-esquerda,
+      .coluna-direita {
+        min-height: auto;
+        border-radius: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="header">Meu Site</div>
+
+    <div class="menu">
+      <a href="#">Home</a>
+      <a href="#">Sobre</a>
+      <a href="#">Contato</a>
+    </div>
+
+    <div class="main-container">
+      <div class="coluna-esquerda">Menu lateral</div>
+      <div class="coluna-direita">Conteúdo principal</div>
+    </div>
+  </div>
+
+  <div class="footer">Rodapé</div>
+</body>
+</html>
+ 

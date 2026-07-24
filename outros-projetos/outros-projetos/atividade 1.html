@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fundamentos do Desenvolvimento Web</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background: #f5f7fb;
+      color: #1f2937;
+      line-height: 1.7;
+    }
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      background: #ffffff;
+      border-radius: 14px;
+      padding: 24px;
+      box-shadow: 0 12px 26px rgba(15, 23, 42, 0.08);
+    }
+    h1,
+    h2,
+    h3 {
+      color: #0f172a;
+      margin-top: 1.25rem;
+    }
+    h1 {
+      margin-bottom: 1rem;
+    }
+    p {
+      margin-top: 1rem;
+    }
+    blockquote {
+      margin: 1rem 0;
+      padding: 1rem 1rem 1rem 1.15rem;
+      border-left: 4px solid #0d6efd;
+      background: #eef4ff;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+      box-shadow: 0 0 0 1px rgba(15, 23, 42, 0.08);
+    }
+    th,
+    td {
+      border: 1px solid #cbd5e1;
+      padding: 0.85rem 1rem;
+      text-align: left;
+    }
+    th {
+      background: #e2e8f0;
+    }
+    tr:nth-child(even) {
+      background: #f8fafc;
+    }
+    fieldset {
+      margin-top: 1.5rem;
+      border: 1px solid #cbd5e1;
+      border-radius: 12px;
+      padding: 1.2rem;
+      background: #f8fafc;
+    }
+    legend {
+      font-weight: 700;
+      color: #0f172a;
+      padding: 0 0.5rem;
+    }
+    label {
+      display: block;
+      margin-top: 1rem;
+      font-weight: 600;
+    }
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 0.85rem 1rem;
+      margin-top: 0.35rem;
+      border-radius: 8px;
+      border: 1px solid #cbd5e1;
+      background: #ffffff;
+      font-size: 1rem;
+    }
+    .radio-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 0.5rem;
+    }
+    .radio-group label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 500;
+      margin-top: 0;
+    }
+    .checkbox-group {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 0.75rem;
+    }
+    button {
+      margin-top: 1.5rem;
+      padding: 0.95rem 1.3rem;
+      border: none;
+      border-radius: 10px;
+      background: #0d6efd;
+      color: #ffffff;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #0b5ed7;
+    }
+    @media (max-width: 768px) {
+      body {
+        margin: 14px;
+      }
+      .container {
+        padding: 18px;
+      }
+      .radio-group {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Fundamentos do Desenvolvimento Web</h1>
+    </header>
+
+    <main>
+      <h2>O que é Desenvolvimento Web?</h2>
+      <p>
+        O desenvolvimento web envolve a criação de páginas e sistemas para a internet utilizando
+        linguagens como HTML, CSS e JavaScript. O HTML é responsável pela estrutura do conteúdo.
+      </p>
+
+      <blockquote>
+        <p>
+          Segundo o site W3C, o HTML deve ser utilizado de forma semântica para melhorar a acessibilidade
+          e a organização do conteúdo.
+        </p>
+      </blockquote>
+
+      <blockquote>
+        <p>
+          O HTML descreve a estrutura de uma página web semanticamente e originalmente incluía dicas para a
+          aparência do documento.
+        </p>
+      </blockquote>
+
+      <hr />
+
+      <h2>Tabela de Cursos Disponíveis</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Curso</th>
+            <th>Carga Horária</th>
+            <th>Modalidade</th>
+            <th>Nível</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Programador Web</td>
+            <td>200h</td>
+            <td>Presencial</td>
+            <td>Iniciante</td>
+          </tr>
+          <tr>
+            <td>Técnico em Informática</td>
+            <td>120h</td>
+            <td>Presencial</td>
+            <td>Técnico</td>
+          </tr>
+          <tr>
+            <td>Design Gráfico</td>
+            <td>160h</td>
+            <td>EAD</td>
+            <td>Intermediário</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="4" style="text-align:center;">Instituição Fictícia de Ensino</td>
+          </tr>
+        </tfoot>
+      </table>
+
+      <hr />
+
+      <h2>Formulário e seus elementos</h2>
+      <form>
+        <fieldset>
+          <legend>Fale conosco</legend>
+
+          <label for="nome">Nome completo:</label>
+          <input id="nome" name="nome" type="text" placeholder="Digite seu nome" />
+
+          <label for="email">Email:</label>
+          <input id="email" name="email" type="email" placeholder="Digite seu email" />
+
+          <label for="idade">Idade:</label>
+          <input id="idade" name="idade" type="number" placeholder="Idade" />
+
+          <label for="cursos">Curso de Interesse</label>
+          <select id="cursos" name="cursos">
+            <option value="Programador Web">Programador Web</option>
+            <option value="Técnico em Informática">Técnico em Informática</option>
+            <option value="Design gráfico">Design gráfico</option>
+          </select>
+
+          <label>Turno Preferido</label>
+          <div class="radio-group">
+            <label><input type="radio" id="manha" name="turno" value="manha" />Manhã</label>
+            <label><input type="radio" id="tarde" name="turno" value="tarde" />Tarde</label>
+            <label><input type="radio" id="noite" name="turno" value="noite" />Noite</label>
+          </div>
+
+          <div class="checkbox-group">
+            <input type="checkbox" id="recibo" name="recibo" />
+            <label for="recibo">Autorizo o uso dos meus dados para contato</label>
+          </div>
+
+          <label for="mensagem">Observações</label>
+          <textarea id="mensagem" name="mensagem" rows="5" placeholder="Digite sua mensagem"></textarea>
+
+          <button type="button" onclick="alert('Recebemos o seu contato')">Enviar</button>
+        </fieldset>
+      </form>
+    </main>
+  </div>
+</body>
+</html>
+ 
